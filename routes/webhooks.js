@@ -3,14 +3,14 @@ var router = express.Router();
 
 var webhooks = ''
 /* GET users listing. */
-router.get('/', function(req, res) {
-  console.log(webhooks);
-  res.send('respond with a resource');
-});
-router.post('/', function(req, res) {
+router.post('/', function(req, res, next) {
 	webhooks = req.body
-	console.log(webhooks);
-	res.sendStatus(200).send(webhooks);
+	console.log(webhooks)
+	res.sendStatus(200)
+  next()
+});
+router.get('/', function(req, res) {
+  res.send(webhooks);
 });
 
 module.exports = router;
