@@ -4,7 +4,7 @@ var router = express.Router();
 var webhooks = ''
 /* GET users listing. */
 router.post('/', function(req, res, next) {
-	webhooks = req.body
+	webhooks = JSON.stringify(req.body)
 	console.log(webhooks)
 	res.sendStatus(200)
   next()
