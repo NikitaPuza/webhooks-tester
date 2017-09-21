@@ -3,13 +3,13 @@ var router = express.Router();
 
 var webhooks = ''
 /* GET users listing. */
-router.post('/', function(req, res, next) {
+router.post('/:hook', function(req, res, next) {
 	webhooks = JSON.stringify(req.body)
-	console.log(webhooks)
+	console.log(req.params.hook);
 	res.sendStatus(200)
   next()
 });
-router.get('/', function(req, res) {
+router.get('/:hook', function(req, res) {
   res.render('index', {data: webhooks} );
 });
 
