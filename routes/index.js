@@ -10,7 +10,7 @@ router.post('/:hook', (req, res, next) => {
   next()
 });
 router.get('/:hook', function(req, res) {
-  res.render('index', {data: webhooks} );
+  res.render('index', {data: webhooks[0]} );
 });
 
 module.exports = router;
