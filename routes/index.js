@@ -5,7 +5,7 @@ var webhooks = ''
 /* GET users listing. */
 router.post('/:hook', function(req, res, next) {
 	webhooks = JSON.stringify(req.body)
-	console.log(req.params.hook);
+	console.log('got ' + req.body + ' at ' + req.params.hook);
 	res.sendStatus(200)
   next()
 });
