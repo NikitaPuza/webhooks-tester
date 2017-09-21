@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-var webhooks = ''
 /* GET users listing. */
-router.post('/:hook', function(req, res, next) {
-	webhooks = JSON.stringify(req.body)
+router.post('/:hook', (req, res, next) => {
+	const webhooks = []
+	let body = JSON.stringify(req.body);
+	webhooks.push(body);
 	console.log('got ' + req.body + ' at ' + req.params.hook);
 	res.sendStatus(200)
   next()
