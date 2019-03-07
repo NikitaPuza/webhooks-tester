@@ -4,7 +4,7 @@ var router = express.Router();
 
 const webhooks = '';
 
-router.post('/', (req, res) => {
+router.post('/hook', (req, res) => {
 	webhooks = JSON.stringify(req.body);
 	res.sendStatus(200)
 });
