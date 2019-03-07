@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 
-const webhooks = '';
+let webhooks = '';
 
 router.post('/hook', (req, res) => {
 	webhooks = JSON.stringify(req.body);
